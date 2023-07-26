@@ -1,0 +1,30 @@
+<!-- Question 6-3: Complete the following code to make a Javascript based digital clock. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalClock</title>
+</head>
+<body>
+    <h1 style="color:brown">Time:</h1>
+    <h1 style="color:green" id="clock"></h1>
+    <script>
+       
+
+function myDigitalClock(){
+    var d1 = new Date();
+    var hours = d1.getHours(); 
+    var minutes = d1.getMinutes();
+    var seconds = d1.getSeconds();
+    var zone = hours < 12 ? "AM":"PM";
+    hours = hours % 12;
+    hours = hours ? hours : 12
+    digitalTime = `${hours}:${minutes}:${seconds} ${zone}`
+    document.getElementById('clock').textContent = digitalTime 
+    }
+    setInterval(myDigitalClock,1000)
+    </script>
+</body>
+</html>
